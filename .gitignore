@@ -1,0 +1,10 @@
+/target
+/tomcat-tmp
+/tmp
+.settings
+/.project
+/.tern-project
+/.classpath
+/.factorypath
+/log
+/bin

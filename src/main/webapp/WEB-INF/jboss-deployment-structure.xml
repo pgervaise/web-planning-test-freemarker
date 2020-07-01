@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2">
+	<deployment>
+		<exclusions>
+			<!-- Spring se charge des annotations -->
+			<!-- <module name="org.hibernate"/> -->
+		</exclusions>
+		<dependencies>
+			<!--
+			06/03/2019 => suite au passage à Spring Boot 2.1.x, désactivation des modules présents
+			              car la version diffère
+			<module name="com.google.guava" />
+			<module name="org.hibernate" />
+			<module name="org.apache.log4j" />
+			-->
+			<!-- les modules sont globaux à WildFly 
+			<module name="org.apache.poi" />
+			<module name="net.sourceforge.jtds" />
+			 -->
+			
+		</dependencies>
+	</deployment>
+</jboss-deployment-structure>
