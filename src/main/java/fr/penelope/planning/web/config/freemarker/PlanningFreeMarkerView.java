@@ -28,6 +28,8 @@ public class PlanningFreeMarkerView extends FreeMarkerView {
 			HttpServletResponse response) {
 		SimpleHash fmModel = super.buildTemplateModel(model, request, response);
 		Version version = Configuration.getVersion();
+		// /!\ since freemarker 2.3.30 => do not use Configuration.getVersion() directly !
+		version = new Version(version.toString()); 
 		BeansWrapper wrapper = new BeansWrapperBuilder(version).build();
 		fmModel.put("statics", wrapper.getStaticModels());
 
