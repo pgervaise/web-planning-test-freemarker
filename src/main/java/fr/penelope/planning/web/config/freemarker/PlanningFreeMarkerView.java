@@ -11,6 +11,7 @@ import freemarker.ext.beans.BeansWrapper;
 import freemarker.ext.beans.BeansWrapperBuilder;
 import freemarker.template.Configuration;
 import freemarker.template.SimpleHash;
+import freemarker.template.Version;
 
 /**
  * 
@@ -26,9 +27,10 @@ public class PlanningFreeMarkerView extends FreeMarkerView {
 	protected SimpleHash buildTemplateModel(Map<String, Object> model, HttpServletRequest request,
 			HttpServletResponse response) {
 		SimpleHash fmModel = super.buildTemplateModel(model, request, response);
-		BeansWrapper wrapper = new BeansWrapperBuilder(Configuration.getVersion()).build();
+		Version version = Configuration.getVersion();
+		BeansWrapper wrapper = new BeansWrapperBuilder(version).build();
 		fmModel.put("statics", wrapper.getStaticModels());
-		
+
 		return fmModel;
 	}
 }
